@@ -12,6 +12,8 @@ Types of operators
 
 ### Arithmetic Operators
 ```
+        a = 10
+        b = 20
 +	Addition	a + b = 30
 -	Subtraction	a – b = -10
 *	Multiplication	a * b = 200
@@ -64,3 +66,8 @@ Types of operators
 **is**	Returns True if both variables are the same object and false otherwise.	a is b
 **is not**	Returns True if both variables are not the same object and false otherwise.	a is not b
 ```
+### Python  Operators Precedence
+- ()
+- ** 
+- / * // % 
+- + - 
