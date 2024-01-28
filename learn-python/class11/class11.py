@@ -3,25 +3,112 @@
 # add new student 
 # update any student
 # delete any student
-# show all student's emails
-laptop = {}
-laptop["color"]  = input("Enter color of lapopt")
-
-
-
-laptop = {
-    "company":"dell",
-    "price":234234,
-    "generation":"2nd",
-    "ram":32,
-    "storage":500,
-    "size":15
+# show all student's emails and id's
+students = [{
+    "id": 1,
+    "name": "Naveed",
+    "email":"student1@gmail.com",
+    "rollNo": 2344,
+    "class": "WMA"
+},
+{
+    "id": 2,
+    "name": "Ali",
+    "email":"student2@gmail.com",
+    "rollNo": 9234,
+    "class": "Python development"
+},
+{
+    "id": 3,
+    "name": "Zain",
+    "email":"student3@gmail.com",
+    "rollNo": 8352,
+    "class": "WMA"
+},
+{
+    "id": 4,
+    "name": "Umar",
+    "email":"student4@gmail.com",
+    "rollNo": 9234,
+    "class": "Nextjs"
+},
+{
+    "id": 5,
+    "name": "Mudasir",
+    "email":"student5@gmail.com",
+    "rollNo": 2342,
+    "class": "Python development"
 }
-laptop["color"] = "black"
-laptop["model"] = "1235",
-laptop["color"] = "red"
-del laptop["color"]
-print("laptop color", laptop["color"])
+
+            ]
+email = input("Please enter new student email address: ")
+newStudent = {
+    "id": len(students)+1,
+    "name": "Mudasir",
+    "email":email,
+    "rollNo": 2342,
+    "class": "Python development"
+}
+students.append(newStudent)
+
+for student in students:
+    print("Student Email: " + student["email"], "Id: ", student["id"])
+
+update_id = int(input("Enter the id of student you want to update: "))
+updatedEmail = input("Please enter the updated email of student you want to update: ")
+
+def updateStudent(student):
+    if student["id"] == update_id:
+        return {
+            "id": student["id"],
+            "name":student["name"],
+            "email":updatedEmail,
+            "rollNo": student["rollNo"],
+            "class": student["class"]
+        }
+    else:
+        return student
+
+# update requrired student
+students = list(map(updateStudent, students))
+print("students",students)
+
+# delete requrired student
+id = int(input("Enter the id of student you want to delete: "))
+def deleteStudent(student):
+    print(student)
+    if student["id"] != id:
+        return student
+    
+students = list(filter(deleteStudent, students))
+
+# show all student's emails and id's
+
+for student in students:
+    print("Student Email: " + student["email"], "Id: ", student["id"])
+
+
+# students = list(filter(lambda student: student['id'] != id, students))
+
+
+# laptop = {}
+# laptop["color"]  = input("Enter color of lapopt")
+
+
+
+# laptop = {
+#     "company":"dell",
+#     "price":234234,
+#     "generation":"2nd",
+#     "ram":32,
+#     "storage":500,
+#     "size":15
+# }
+# laptop["color"] = "black"
+# laptop["model"] = "1235",
+# laptop["color"] = "red"
+# del laptop["color"]
+# print("laptop color", laptop["color"])
 
 
 
