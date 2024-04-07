@@ -31,6 +31,29 @@ Search and Replace:
 **string.index(substring)**: Returns the lowest index of the substring.
 **string.count(substring)**: Returns the number of occurrences of the substring.
 **string.replace(old, new)**: Replaces occurrences of the old substring with the new substring.
+
+**split()**: Splits the string into a list based on a delimiter.
+```
+sentence = "This is a sample sentence."
+words = sentence.split()  # Split on whitespace
+print(words)  # Output: ['This', 'is', 'a', 'sample', 'sentence.']
+
+datestr = "2024-02-11"
+date_parts = datestr.split("-")  # Split on hyphens
+print(date_parts)  # Output: ['2024', '02', '11']
+```
+**join()**: Joins a list of strings into a single string with a delimiter.
+
+```
+word_list = ["apple", "banana", "orange"]
+fruit_str = ", ".join(word_list)  # Join with commas and spaces
+print(fruit_str)  # Output: apple, banana, orange
+
+path_parts = ["home", "user", "documents"]
+filepath = "/".join(path_parts)  # Join with forward slashes
+print(filepath)  # Output: /home/user/documents
+```
+
 Checking Substrings:
 
 **string.startswith(prefix)**: Checks if the string starts with a specific prefix.
@@ -45,8 +68,19 @@ Character Information:
 Formatting:
 
 **string.format()**: Formats a string using placeholders.
-**f-string**: Introduced in Python 3.6, allows embedding expressions inside string literals.
-Encoding and Decoding:
+```
+name = "Alice"
+age = 30
+greeting = "Hello, {}! You are {} years old.".format(name, age)
+```
 
-**string.encode(encoding)**: Encodes the string into bytes.
-**bytes.decode(encoding)**: Decodes bytes into a string.
+**f-string**: Introduced in Python 3.6, allows embedding expressions inside string literals.
+```
+name = "Bob"
+age = 25
+greeting = f"Hello, {name}! You are {age} years old."
+```
+
+
+
+
